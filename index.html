@@ -1,0 +1,140 @@
+<html>
+<head>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</head>
+<body>
+	<div class="container-fluid">
+		<h1>Water Calculator</h1>
+		<h3>Bathroom</h3>
+		<div class="row">
+			<div class="col-md-3">
+				<label for="b-showers">Number of showers</label>
+				<select id="b-showers"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select>
+			</div>
+			<div class="col-md-3">
+				<label for="b-toilet">Number of toilets</label>
+				<select id="b-toilet"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select>
+			</div>
+			<div class="col-md-3">
+				<label for="b-taps">Number of taps</label>
+				<select id="b-taps"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select>
+			</div>
+			<div class="col-md-3">
+				<label for="b-baths">Number of baths</label>
+				<select id="b-baths"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select>
+			</div>
+		</div>
+		<h3>Kitchen</h3>
+		<div class="row">
+			<div class="col-md-3">
+				<label for="b-dishwashers">Number of dishwashers</label>
+				<select id="b-dishwashers"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select>
+			</div>
+			<div class="col-md-3">
+				<label for="b-kettles">Number of kettles</label>
+				<select id="b-kettles"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select>
+			</div>
+			<div class="col-md-3">
+				<label for="k-taps">Number of kitchen taps</label>
+				<select id="k-taps"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select>
+			</div>
+			<div class="col-md-3">
+				<label for="b-washing">Number of washing machines</label>
+				<select id="b-washing"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select>
+			</div>
+		</div>
+		<h3>Outdoors</h3>
+		<div class="row">
+			<div class="col-md-3">
+				<label for="b-car">Do you wash your car?</label>
+				<select id="b-car"><option>Yes</option><option>No</option></select>
+			</div>
+			<div class="col-md-3">
+				<label for="b-toilet">Do you water your garden?</label>
+				<select id="b-toilet"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select>
+			</div>
+		</div>
+		<h2>Results</h2>
+		<div class="row">
+			<div class="col-md-6">
+				<div class="">
+					<label>Water spent:</label><br>
+					0 k litres
+				</div>
+				<div class="">
+					<label>Energy spent:</label><br>
+					0 kWH 
+				</div>
+				<div class="">
+					<label>Money spent:</label><br>
+					0 pounds
+				</div>
+			</div>
+			<div class="col-md-6">
+				<h4>Chart:</h4>
+				    <!-- Prepare a Dom with size (width and height) for ECharts -->
+			    <div id="main" style="height:400px"></div>
+			    <!-- ECharts import -->
+			    <script src="http://echarts.baidu.com/build/dist/echarts.js"></script>
+			    <script type="text/javascript">
+			        // configure for module loader
+			        require.config({
+			            paths: {
+			                echarts: 'http://echarts.baidu.com/build/dist'
+			            }
+			        });
+			        
+			        // use
+			        require(
+			            [
+			                'echarts',
+			                'echarts/chart/bar' // require the specific chart type
+			            ],
+			            function (ec) {
+			                // Initialize after dom ready
+			                var myChart = ec.init(document.getElementById('main')); 
+			                
+			                var option = {
+			                    tooltip: {
+			                        show: true
+			                    },
+			                    legend: {
+			                        data:['Total water usage']
+			                    },
+			                    xAxis : [
+			                        {
+			                            type : 'category',
+			                            data : ["Bathroom", "Kithchen", "Outdoors"]
+			                        }
+			                    ],
+			                    yAxis : [
+			                        {
+			                            type : 'value'
+			                        }
+			                    ],
+			                    series : [
+			                        {
+			                            "name":"Water Usage",
+			                            "type":"bar",
+			                            "data":[550, 90, 40]
+			                        }
+			                    ]
+			                };
+			        
+			                // Load data into the ECharts instance 
+			                myChart.setOption(option); 
+			            }
+			        );
+			    </script>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,47 @@
+{
+	"shower": {
+		"water": 40,
+		"energy": 800,
+		"money" : 70
+	},
+	"toilet": {
+		"water": 55,
+		"energy": 0,
+		"money" : 15
+	},
+	"tap": {
+		"water": 40,
+		"energy": 44,
+		"money" : 4
+	},
+	"bath": {
+		"water": 34,
+		"energy": 44,
+		"money" : 34
+	},
+	"dishwasher": {
+		"water": 40,
+		"energy": 800,
+		"money" : 70
+	},
+	"kettle": {
+		"water": 3,
+		"energy": 800,
+		"money" : 23
+	},
+	"washing": {
+		"water": 3,
+		"energy": 800,
+		"money" : 34
+	},
+	"car": {
+		"water": 40,
+		"energy": 22,
+		"money" : 22
+	},
+	"garden": {
+		"water": 23,
+		"energy": 2,
+		"money" : 22
+	},
+}
