@@ -9,3 +9,6 @@ The chart should display how much the user is spending in water, energy and mone
 You can use any type of JavaScript framework to get better UI.
 
 https://dimitar-swsm.github.io/swsm-challenge-/index.html
+
+
+Fork this repo and send us the link :)
